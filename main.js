@@ -103,34 +103,31 @@ function allDataInputs() {
   for (var i = 0; i < formData.length; i++) {
     if (formData[i].type === "text" || formData[i].type === "email" || formData[i].type === "tel") {
       const dataInput = document.createElement('input')
-        dataInput.type = formData[i].type
-        dataInput.id = formData[i].id
-        dataInput.placeholder = formData[i].label
-        dataInput.icon = formData[i].icon
-        fields.appendChild(dataInput)
+      dataInput.type = formData[i].type
+      dataInput.id = formData[i].id
+      dataInput.placeholder = formData[i].label
+      fields.appendChild(dataInput)
     } else if (formData[i].type === "select") {
       const dataSelect = document.createElement('select')
       const dataSelectLanguage = document.createElement('option')
       dataSelectLanguage.textContent = 'Select language...'
-        dataSelect.type = formData[i].type
-        dataSelect.id = formData[i].id
-        dataSelect.label = formData[i].label // Need to get "Select Language" to show up
-        dataSelect.icon = formData[i].icon
-        dataSelect.appendChild(dataSelectLanguage)
-        for (j = 0; j < formData[i].options.length; j++) {
-          const language = document.createElement('option')
-          language.label = formData[i].options[j].label
-          language.value = formData[i].options[j].value
-          dataSelect.appendChild(language)
-        }
-        fields.appendChild(dataSelect)
+      dataSelect.type = formData[i].type
+      dataSelect.id = formData[i].id
+      dataSelect.label = formData[i].label
+      dataSelect.appendChild(dataSelectLanguage)
+      for (j = 0; j < formData[i].options.length; j++) {
+        const language = document.createElement('option')
+        language.label = formData[i].options[j].label
+        language.value = formData[i].options[j].value
+        dataSelect.appendChild(language)
+      }
+      fields.appendChild(dataSelect)
     } else if (formData[i].type === "textarea") {
       const dataTextArea =document.createElement('textarea')
-        dataTextArea.type = formData[i].type
-        dataTextArea.id = formData[i].id
-        dataTextArea.placeholder = formData[i].label
-        dataTextArea.icon = formData[i].icon
-        fields.appendChild(dataTextArea)
+      dataTextArea.type = formData[i].type
+      dataTextArea.id = formData[i].id
+      dataTextArea.placeholder = formData[i].label
+      fields.appendChild(dataTextArea)
     }
   }
 }
