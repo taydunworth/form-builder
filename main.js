@@ -123,7 +123,7 @@ function allDataInputs() {
       }
       fields.appendChild(dataSelect)
     } else if (formData[i].type === "textarea") {
-      const dataTextArea =document.createElement('textarea')
+      const dataTextArea = document.createElement('textarea')
       dataTextArea.type = formData[i].type
       dataTextArea.id = formData[i].id
       dataTextArea.placeholder = formData[i].label
